@@ -36,7 +36,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/editinputlayout_login_emailedit"
+                android:id="@+id/textinputlayout_login_emailedit"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="24dp"
@@ -50,7 +50,7 @@
                 app:layout_constraintTop_toBottomOf="@id/imageview_login_app_logo">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editinput_login_email"
+                    android:id="@+id/textinputedittext_login_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="이메일을 입력하세요"
@@ -58,7 +58,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/editlayout_login_password"
+                android:id="@+id/textinputlayout_login_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="24dp"
@@ -71,10 +71,10 @@
                 app:hintEnabled="false"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/editinputlayout_login_emailedit">
+                app:layout_constraintTop_toBottomOf="@id/textinputlayout_login_emailedit">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editinput_login_password"
+                    android:id="@+id/textinputedittext_login_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="비밀번호를 입력하세요"
@@ -92,7 +92,7 @@
                 android:src="@drawable/google_login"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/editlayout_login_password" />
+                app:layout_constraintTop_toBottomOf="@id/textinputlayout_login_password" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button_login_jagilogin"
