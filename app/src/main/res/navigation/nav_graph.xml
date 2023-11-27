@@ -25,4 +25,8 @@
         android:name="com.likelion.agijagiseller.feature.storemanagement.StoreManagementFragment"
         android:label="fragment_store_management"
         tools:layout="@layout/fragment_store_management" />
+    <fragment
+        android:id="@+id/productDetailFragment"
+        android:name="com.likelion.agijagiseller.feature.product.ProductDetailFragment"
+        android:label="ProductDetailFragment" />
 </navigation>
