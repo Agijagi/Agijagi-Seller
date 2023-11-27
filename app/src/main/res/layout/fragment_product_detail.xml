@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/jagi_ivory">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar_productdetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/arrow_back_24px" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_productdetail">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageview_productdetail_thumbnail_image"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/product_detail_default_image"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textview_productdetail_brand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:text="브랜드명"
+                android:textColor="@color/brand_name"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageview_productdetail_thumbnail_image" />
+
+            <TextView
+                android:id="@+id/textview_productdetail_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="제품명 도자기"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/textview_productdetail_brand"
+                app:layout_constraintTop_toBottomOf="@id/textview_productdetail_brand" />
+
+            <TextView
+                android:id="@+id/textview_productdetail_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="150,000원"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/textview_productdetail_name"
+                app:layout_constraintTop_toBottomOf="@id/textview_productdetail_name" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/divider_productdetail"
+                android:layout_width="0dp"
+                android:layout_height="8dp"
+                android:layout_marginTop="24dp"
+                app:dividerColor="#E4E3E2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textview_productdetail_price" />
+
+            <TextView
+                android:id="@+id/textview_productdetail_info_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="제품명 도자기 ..."
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider_productdetail" />
+
+            <TextView
+                android:id="@+id/textview_productdetail_info_description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginTop="16dp"
+                android:text="기본적인 블랙 색상의 깔끔한 디자인과 다양한 디자인으로 쓰임이 많은 도자기 그릇입니다. 도자기 재질로 무게감이 있어 안정적으로.."
+                android:textAlignment="center"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textview_productdetail_info_title" />
+
+            <ImageView
+                android:id="@+id/imageview_productdetail_image1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/product_detail_default_image"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textview_productdetail_info_description" />
+
+            <ImageView
+                android:id="@+id/imageview_productdetail_image2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/product_detail_default_image"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageview_productdetail_image1" />
+
+            <ImageView
+                android:id="@+id/imageview_productdetail_image3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/product_detail_default_image"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageview_productdetail_image2" />
+
+            <ImageView
+                android:id="@+id/imageview_productdetail_image4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/product_detail_default_image"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageview_productdetail_image3" />
+
+            <ImageView
+                android:id="@+id/imageview_productdetail_image5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/product_detail_default_image"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageview_productdetail_image4" />
+
+            <ImageView
+                android:id="@+id/imageview_productdetail_image6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="80dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/product_detail_default_image"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageview_productdetail_image5" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_productdetail_complete"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/wide_box_bottom_active"
+        android:textColor="@color/jagi_hint_color"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
