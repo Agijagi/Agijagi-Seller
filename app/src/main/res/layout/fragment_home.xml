@@ -47,17 +47,7 @@
         app:dividerColor="#E4E3E2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_home_store_email"/>
-
-<!--    <View-->
-<!--        android:id="@+id/rectangle_4"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="8dp"-->
-<!--        android:layout_marginTop="16dp"-->
-<!--        android:background="#E4E3E2"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/textview_home_store_email" />-->
+        app:layout_constraintTop_toBottomOf="@id/textview_home_store_email" />
 
     <ScrollView
         android:layout_width="0dp"
