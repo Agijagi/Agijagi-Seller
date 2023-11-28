@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="product_dropdown_select_category">
+        <item>Plate</item>
+        <item>Cup</item>
+        <item>Bowl</item>
+    </array>
+
+    <array name="product_dropdown_select_isordermade">
+        <item>주문 제작 가능</item>
+        <item>주문 제작 불가능</item>
+    </array>
+
+</resources>
