@@ -29,4 +29,10 @@
         android:id="@+id/productDetailFragment"
         android:name="com.likelion.agijagiseller.feature.product.ProductDetailFragment"
         android:label="ProductDetailFragment" />
+    <fragment
+        android:id="@+id/productRegistrationFragment"
+        android:name="com.likelion.agijagiseller.feature.product.ProductRegistrationFragment"
+        android:label="fragment_product_registration"
+        tools:layout="@layout/fragment_product_registration" />
+
 </navigation>
