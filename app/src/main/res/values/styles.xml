@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Toolbar.Title" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="titleTextAppearance">@style/title_bold_22</item>
+    </style>
+
+    <style name="title_bold_22" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:textSize">22sp</item>
+        <item name="fontFamily">@font/nanum_square_round_otf_b</item>
+    </style>
+
+</resources>
