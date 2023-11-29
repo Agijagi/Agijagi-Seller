@@ -12,4 +12,10 @@
         <item>주문 제작 불가능</item>
     </array>
 
+    <array name="product_list_status">
+        <item>판매</item>
+        <item>품절</item>
+        <item>숨김</item>
+    </array>
+
 </resources>

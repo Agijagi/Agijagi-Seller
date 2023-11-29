@@ -34,5 +34,15 @@
         android:name="com.likelion.agijagiseller.feature.product.ProductRegistrationFragment"
         android:label="fragment_product_registration"
         tools:layout="@layout/fragment_product_registration" />
+    <fragment
+        android:id="@+id/productListFragment"
+        android:name="com.likelion.agijagiseller.feature.product.ProductListFragment"
+        android:label="fragment_product_list"
+        tools:layout="@layout/fragment_product_list" />
+    <fragment
+        android:id="@+id/orderShippingManagementFragment"
+        android:name="com.likelion.agijagiseller.feature.ordershippingmanagement.OrderShippingManagementFragment"
+        android:label="fragment_order_shipping_management"
+        tools:layout="@layout/fragment_order_shipping_management" />
 
 </navigation>

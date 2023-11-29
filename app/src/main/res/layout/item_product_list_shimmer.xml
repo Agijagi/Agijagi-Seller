@@ -3,89 +3,98 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginVertical="4dp"
-    android:backgroundTint="@color/jagi_white"
-    android:paddingVertical="8dp"
-    app:cardCornerRadius="8dp"
-    app:strokeColor="@color/jagi_black_42"
-    app:strokeWidth="1dp">
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginTop="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cardView_order_management_shimmer"
+            android:id="@+id/cardview_product_list_product"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
+            app:cardCornerRadius="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="#9F9F9F">
 
             <ImageView
-                android:id="@+id/imageview_order_management_item"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/imageView_product_list_product"
+                android:layout_width="96dp"
+                android:layout_height="72dp"
+                android:adjustViewBounds="true"
                 android:scaleType="centerCrop"
                 android:src="@drawable/item_default_logo" />
 
         </com.google.android.material.card.MaterialCardView>
 
         <TextView
-            android:id="@+id/textview_order_management_item_brand"
+            android:id="@+id/textView_product_list_brand"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="30dp"
             android:background="#9F9F9F"
-            android:text="주문자명"
+            android:text="브랜드명"
             android:textColor="#9F9F9F"
             android:textSize="10sp"
-            app:layout_constraintStart_toEndOf="@+id/cardView_order_management_shimmer"
+            app:layout_constraintStart_toEndOf="@+id/cardview_product_list_product"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textview_order_management_item_name"
+            android:id="@+id/textView_product_list_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
             android:layout_marginTop="4dp"
             android:background="#9F9F9F"
             android:text="제품명 도자기"
             android:textColor="#9F9F9F"
             android:textSize="12sp"
-            app:layout_constraintStart_toEndOf="@+id/cardView_order_management_shimmer"
-            app:layout_constraintTop_toBottomOf="@id/textview_order_management_item_brand" />
+            app:layout_constraintStart_toStartOf="@+id/textView_product_list_brand"
+            app:layout_constraintTop_toBottomOf="@+id/textView_product_list_brand" />
 
         <TextView
-            android:id="@+id/textview_order_management_item_price"
+            android:id="@+id/textView_product_list_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="4dp"
             android:background="#9F9F9F"
             android:text="100,000원"
             android:textColor="#9F9F9F"
             android:textSize="11sp"
-            app:layout_constraintStart_toEndOf="@+id/cardView_order_management_shimmer"
-            app:layout_constraintTop_toBottomOf="@id/textview_order_management_item_name" />
+            app:layout_constraintStart_toStartOf="@+id/textView_product_list_name"
+            app:layout_constraintTop_toBottomOf="@+id/textView_product_list_name" />
 
         <TextView
-            android:id="@+id/textview_order_management_date"
+            android:id="@+id/textView_product_list_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="#9F9F9F"
+            android:text="23.09.09"
+            android:textColor="#9F9F9F"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/dropdownmenu_product_list_status"
+            android:layout_width="68dp"
+            android:layout_height="24dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:background="#9F9F9F"
-            android:text="23.07.08"
             android:textColor="#9F9F9F"
-            android:textSize="11sp"
+            app:hintEnabled="false"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
+
+        </com.google.android.material.textfield.TextInputLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
