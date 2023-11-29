@@ -26,9 +26,4 @@
         <item name="fontFamily">@font/nanum_square_round_otf_b</item>
     </style>
 
-    <style name="title_bold_22" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
-        <item name="android:textSize">22sp</item>
-        <item name="fontFamily">@font/nanum_square_round_otf_b</item>
-    </style>
-
 </resources>
