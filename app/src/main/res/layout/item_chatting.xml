@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingVertical="12dp">
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/checkbox_chatting"
+        style="@style/CustomCheckBoxSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textview_chatting_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:maxLines="1"
+        android:text="제목"
+        android:textAppearance="@style/title_bold_20"
+        app:layout_constraintEnd_toStartOf="@id/imageview_chatting_new"
+        app:layout_constraintStart_toEndOf="@id/checkbox_chatting"
+        app:layout_constraintTop_toTopOf="@id/checkbox_chatting" />
+
+    <ImageView
+        android:id="@+id/imageview_chatting_new"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/new_mark"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@id/textview_chatting_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/textview_chatting_title" />
+
+    <TextView
+        android:id="@+id/textview_chatting_body"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="내용"
+        android:textColor="@color/jagi_gray_message"
+        app:layout_constraintBottom_toBottomOf="@id/checkbox_chatting"
+        app:layout_constraintEnd_toStartOf="@id/textview_chatting_date"
+        app:layout_constraintStart_toEndOf="@id/checkbox_chatting"
+        app:layout_constraintTop_toBottomOf="@id/textview_chatting_title" />
+
+    <TextView
+        android:id="@+id/textview_chatting_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:maxLines="1"
+        android:text="M월 d일"
+        app:layout_constraintBottom_toBottomOf="@id/textview_chatting_body"
+        app:layout_constraintEnd_toEndOf="@id/imageview_chatting_new"
+        app:layout_constraintTop_toTopOf="@id/textview_chatting_body" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

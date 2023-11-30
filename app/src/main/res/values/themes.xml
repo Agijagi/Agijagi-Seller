@@ -6,4 +6,8 @@
     </style>
 
     <style name="Theme.AgijagiSeller" parent="Base.Theme.AgijagiSeller" />
+
+    <style name="CustomCheckBoxSmall" parent="Widget.Material3.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/shopping_list_small_circle_checkbox_selector</item>
+    </style>
 </resources>

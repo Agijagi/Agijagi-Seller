@@ -44,5 +44,15 @@
         android:name="com.likelion.agijagiseller.feature.ordershippingmanagement.OrderShippingManagementFragment"
         android:label="fragment_order_shipping_management"
         tools:layout="@layout/fragment_order_shipping_management" />
+    <fragment
+        android:id="@+id/chattingFragment"
+        android:name="com.likelion.agijagiseller.feature.chatting.ChattingFragment"
+        android:label="fragment_chatting"
+        tools:layout="@layout/fragment_chatting" />
+    <fragment
+        android:id="@+id/chattingRoomFragment"
+        android:name="com.likelion.agijagiseller.feature.chatting.ChattingRoomFragment"
+        android:label="fragment_chatting_room"
+        tools:layout="@layout/fragment_chatting_room" />
 
 </navigation>

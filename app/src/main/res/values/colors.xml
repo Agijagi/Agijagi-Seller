@@ -18,4 +18,6 @@
     <color name="jagi_white_30">#4DFFFFFF</color>
 
     <color name="jagi_white">#4DFFFFFF</color>
+    
+    <color name="jagi_gray_message">#FF676767</color>
 </resources>
