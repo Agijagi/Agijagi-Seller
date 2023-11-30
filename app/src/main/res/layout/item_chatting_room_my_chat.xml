@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="12dp"
+    android:layout_marginTop="8dp">
+
+    <TextView
+        android:id="@+id/textview_chattingroommychat_is_read"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:text="1"
+        android:textColor="@color/jagi_carrot"
+        android:textAppearance="@style/body_regular_11"
+        app:layout_constraintBottom_toTopOf="@id/textview_chattingroommychat_date"
+        app:layout_constraintEnd_toStartOf="@id/textview_chattingroommychat_content" />
+
+    <TextView
+        android:id="@+id/textview_chattingroommychat_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="오전 00:00"
+        android:textAppearance="@style/body_regular_11"
+        android:textColor="@color/jagi_gray_message"
+        app:layout_constraintBottom_toBottomOf="@id/textview_chattingroommychat_content"
+        app:layout_constraintEnd_toEndOf="@id/textview_chattingroommychat_is_read" />
+
+    <TextView
+        android:id="@+id/textview_chattingroommychat_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/chatting_message_box_my_chat"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
