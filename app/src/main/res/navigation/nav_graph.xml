@@ -54,5 +54,10 @@
         android:name="com.likelion.agijagiseller.feature.chatting.ChattingRoomFragment"
         android:label="fragment_chatting_room"
         tools:layout="@layout/fragment_chatting_room" />
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.likelion.agijagiseller.feature.notification.NotificationFragment"
+        android:label="fragment_notification"
+        tools:layout="@layout/fragment_notification" />
 
 </navigation>
