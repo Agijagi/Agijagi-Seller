@@ -7,36 +7,35 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.likelion.agijagiseller.R
-import com.likelion.agijagiseller.databinding.FragmentProductListBinding
+import com.likelion.agijagiseller.databinding.FragmentProductDetailBinding
 
-class ProductListFragment : Fragment() {
-    private var _binding: FragmentProductListBinding? = null
+class ProductDetailPreviewFragment : Fragment() {
+    private var _binding: FragmentProductDetailBinding? = null
     private val binding get() = _binding!!
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentProductListBinding.inflate(inflater, container, false)
+        _binding = FragmentProductDetailBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         initToolbar()
+        initCompleteButton()
     }
 
     private fun initToolbar() {
-        binding.run {
-            toolbarProductList.setNavigationOnClickListener {
-                findNavController().popBackStack()
-            }
+        binding.toolbarProductdetail.setNavigationOnClickListener {
+            findNavController().popBackStack()
+        }
+    }
 
-            toolbarProductList.setOnMenuItemClickListener {
-                when (it.itemId) {
-                    R.id.menu_product_list_add -> findNavController().navigate(R.id.action_productListFragment_to_productRegistrationFragment)
-                }
-                false
-            }
+    private fun initCompleteButton() {
+        binding.buttonProductdetailComplete.setOnClickListener {
+            findNavController().navigate(R.id.action_productDetailPreviewFragment_to_productListFragment)
         }
     }
 

@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.likelion.agijagiseller.R
 import com.likelion.agijagiseller.databinding.FragmentSignupBinding
 
@@ -25,6 +26,25 @@ class SignupFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        initToolbar()
+        initRegisterButton()
+    }
+
+    private fun initRegisterButton() {
+        binding.run {
+            buttonSignupComplete.setOnClickListener {
+                findNavController().navigate(R.id.action_signupFragment_to_loginFragment)
+            }
+        }
+    }
+
+    private fun initToolbar() {
+        binding.run {
+            toolbarSignupSeller.setNavigationOnClickListener {
+                findNavController().popBackStack()
+            }
+        }
     }
 
     override fun onDestroyView() {
