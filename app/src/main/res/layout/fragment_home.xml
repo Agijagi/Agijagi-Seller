@@ -57,8 +57,10 @@
         android:layout_marginTop="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rectangle_4">
+        app:layout_constraintTop_toBottomOf="@id/rectangle_4"
+        app:layout_constraintVertical_bias="1.0">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -70,6 +72,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:clickable="true"
+                android:focusable="true"
                 android:text="내 스토어 관리"
                 android:textSize="17sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -93,6 +96,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:clickable="true"
+                android:focusable="true"
                 android:text="상품 등록"
                 android:textSize="17sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -115,6 +119,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:clickable="true"
+                android:focusable="true"
                 android:text="판매상품 리스트"
                 android:textSize="17sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -137,6 +142,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:clickable="true"
+                android:focusable="true"
                 android:text="반품/취소/교환"
                 android:textSize="17sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -159,6 +165,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:clickable="true"
+                android:focusable="true"
                 android:text="주문/배송 관리"
                 android:textSize="17sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -181,6 +188,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:clickable="true"
+                android:focusable="true"
                 android:text="알림 설정"
                 android:textSize="17sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -203,6 +211,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:clickable="true"
+                android:focusable="true"
                 android:text="로그아웃"
                 android:textSize="17sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -225,6 +234,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:clickable="true"
+                android:focusable="true"
                 android:text="회원탈퇴"
                 android:textSize="17sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -232,7 +242,6 @@
                 app:layout_constraintTop_toBottomOf="@id/divider7" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
 
     </ScrollView>
 
