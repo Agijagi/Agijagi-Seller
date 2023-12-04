@@ -9,55 +9,163 @@
         android:id="@+id/loginFragment"
         android:name="com.likelion.agijagiseller.feature.login.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_signupFragment"
+            app:destination="@id/signupFragment" />
+    </fragment>
     <fragment
         android:id="@+id/signupFragment"
         android:name="com.likelion.agijagiseller.feature.signup.SignupFragment"
         android:label="fragment_signup"
-        tools:layout="@layout/fragment_signup" />
+        tools:layout="@layout/fragment_signup" >
+        <action
+            android:id="@+id/action_signupFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.likelion.agijagiseller.feature.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_notificationFragment"
+            app:destination="@id/notificationFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_orderShippingManagementFragment"
+            app:destination="@id/orderShippingManagementFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_productListFragment"
+            app:destination="@id/productListFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_storeManagementFragment"
+            app:destination="@id/storeManagementFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_chattingFragment"
+            app:destination="@id/chattingFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_productRegistrationFragment"
+            app:destination="@id/productRegistrationFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_notificationSettingFragment"
+            app:destination="@id/notificationSettingFragment" />
+    </fragment>
     <fragment
         android:id="@+id/storeManagementFragment"
         android:name="com.likelion.agijagiseller.feature.storemanagement.StoreManagementFragment"
         android:label="fragment_store_management"
-        tools:layout="@layout/fragment_store_management" />
+        tools:layout="@layout/fragment_store_management" >
+        <action
+            android:id="@+id/action_storeManagementFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/productDetailFragment"
         android:name="com.likelion.agijagiseller.feature.product.ProductDetailFragment"
-        android:label="ProductDetailFragment" />
+        android:label="ProductDetailFragment" >
+        <action
+            android:id="@+id/action_productDetailFragment_to_productUpdateFragment"
+            app:destination="@id/productUpdateFragment" />
+        <action
+            android:id="@+id/action_productDetailFragment_to_productListFragment"
+            app:destination="@id/productListFragment" />
+    </fragment>
     <fragment
         android:id="@+id/productRegistrationFragment"
         android:name="com.likelion.agijagiseller.feature.product.ProductRegistrationFragment"
         android:label="fragment_product_registration"
-        tools:layout="@layout/fragment_product_registration" />
+        tools:layout="@layout/fragment_product_registration" >
+        <action
+            android:id="@+id/action_productRegistrationFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_productRegistrationFragment_to_productDetailPreviewFragment"
+            app:destination="@id/productDetailPreviewFragment" />
+    </fragment>
     <fragment
         android:id="@+id/productListFragment"
         android:name="com.likelion.agijagiseller.feature.product.ProductListFragment"
         android:label="fragment_product_list"
-        tools:layout="@layout/fragment_product_list" />
+        tools:layout="@layout/fragment_product_list" >
+        <action
+            android:id="@+id/action_productListFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_productListFragment_to_productDetailFragment"
+            app:destination="@id/productDetailFragment" />
+        <action
+            android:id="@+id/action_productListFragment_to_productRegistrationFragment"
+            app:destination="@id/productRegistrationFragment" />
+    </fragment>
     <fragment
         android:id="@+id/orderShippingManagementFragment"
         android:name="com.likelion.agijagiseller.feature.ordershippingmanagement.OrderShippingManagementFragment"
         android:label="fragment_order_shipping_management"
-        tools:layout="@layout/fragment_order_shipping_management" />
+        tools:layout="@layout/fragment_order_shipping_management" >
+        <action
+            android:id="@+id/action_orderShippingManagementFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/chattingFragment"
         android:name="com.likelion.agijagiseller.feature.chatting.ChattingFragment"
         android:label="fragment_chatting"
-        tools:layout="@layout/fragment_chatting" />
+        tools:layout="@layout/fragment_chatting" >
+        <action
+            android:id="@+id/action_chattingFragment_to_chattingRoomFragment"
+            app:destination="@id/chattingRoomFragment" />
+        <action
+            android:id="@+id/action_chattingFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/chattingRoomFragment"
         android:name="com.likelion.agijagiseller.feature.chatting.ChattingRoomFragment"
         android:label="fragment_chatting_room"
-        tools:layout="@layout/fragment_chatting_room" />
+        tools:layout="@layout/fragment_chatting_room" >
+        <action
+            android:id="@+id/action_chattingRoomFragment_to_chattingFragment"
+            app:destination="@id/chattingFragment" />
+    </fragment>
     <fragment
         android:id="@+id/notificationFragment"
         android:name="com.likelion.agijagiseller.feature.notification.NotificationFragment"
         android:label="fragment_notification"
-        tools:layout="@layout/fragment_notification" />
+        tools:layout="@layout/fragment_notification" >
+        <action
+            android:id="@+id/action_notificationFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/notificationSettingFragment"
+        android:name="com.likelion.agijagiseller.feature.notification.NotificationSettingFragment"
+        android:label="fragment_notification_setting"
+        tools:layout="@layout/fragment_notification_setting" >
+        <action
+            android:id="@+id/action_notificationSettingFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailPreviewFragment"
+        android:name="com.likelion.agijagiseller.feature.product.ProductDetailPreviewFragment"
+        android:label="ProductDetailPreviewFragment" >
+        <action
+            android:id="@+id/action_productDetailPreviewFragment_to_productListFragment"
+            app:destination="@id/productListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productUpdateFragment"
+        android:name="com.likelion.agijagiseller.feature.product.ProductUpdateFragment"
+        android:label="ProductUpdateFragment" >
+        <action
+            android:id="@+id/action_productUpdateFragment_to_productDetailFragment"
+            app:destination="@id/productDetailFragment" />
+    </fragment>
 
 </navigation>

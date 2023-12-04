@@ -2,6 +2,7 @@ package com.likelion.agijagiseller.global
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.OnBackPressedCallback
 import androidx.navigation.fragment.NavHostFragment
 import com.likelion.agijagiseller.R
 import com.likelion.agijagiseller.databinding.ActivityMainBinding
@@ -16,6 +17,29 @@ class MainActivity : AppCompatActivity() {
 
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.fragmentContainerView) as NavHostFragment
-        val navController = navHostFragment.navController
+
+        navHostFragment.navController
+        handleOnBackPressed()
+    }
+
+    private fun handleOnBackPressed() {
+        val callback = object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                val navHostFragment =
+                    supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
+                val navController = navHostFragment.navController
+
+                when (navController.currentDestination?.id) {
+                    R.id.homeFragment -> finish()
+
+                    else -> {
+                        isEnabled = false
+                        onBackPressedDispatcher.onBackPressed()
+                    }
+                }
+            }
+        }
+
+        onBackPressedDispatcher.addCallback(this, callback)
     }
 }

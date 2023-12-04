@@ -7,35 +7,41 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.likelion.agijagiseller.R
-import com.likelion.agijagiseller.databinding.FragmentProductListBinding
+import com.likelion.agijagiseller.databinding.FragmentProductRegistrationBinding
 
-class ProductListFragment : Fragment() {
-    private var _binding: FragmentProductListBinding? = null
+class ProductUpdateFragment : Fragment() {
+    private var _binding: FragmentProductRegistrationBinding? = null
     private val binding get() = _binding!!
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentProductListBinding.inflate(inflater, container, false)
+        _binding = FragmentProductRegistrationBinding.inflate(inflater, container, false)
+
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         initToolbar()
+        initUpdateButton()
+    }
+
+    private fun initUpdateButton() {
+        binding.buttonProductAddOk.setOnClickListener {
+            // 업데이트 프리뷰로 넘어가야됨
+        }
     }
 
     private fun initToolbar() {
         binding.run {
-            toolbarProductList.setNavigationOnClickListener {
-                findNavController().popBackStack()
+            toolbarProductregistration.run {
+                title = "판매상품 수정"
             }
 
-            toolbarProductList.setOnMenuItemClickListener {
-                when (it.itemId) {
-                    R.id.menu_product_list_add -> findNavController().navigate(R.id.action_productListFragment_to_productRegistrationFragment)
-                }
-                false
+            toolbarProductregistration.setNavigationOnClickListener {
+                findNavController().popBackStack()
             }
         }
     }
@@ -44,5 +50,4 @@ class ProductListFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
 }
