@@ -16,14 +16,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:menu="@menu/menu_chatting"
         app:navigationIcon="@drawable/arrow_back_24px"
-        app:title="채팅" />
+        app:title="@string/chatting_toolbar_title" />
 
     <TextView
         android:id="@+id/textview_chatting_empty_msg"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:gravity="center"
-        android:text="채팅 기록이 없습니다"
+        android:text="@string/chatting_empty_message"
         android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
         android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/layout_chatting_bottom_button"
