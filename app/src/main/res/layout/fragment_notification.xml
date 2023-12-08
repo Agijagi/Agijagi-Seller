@@ -16,14 +16,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:menu="@menu/menu_notification"
         app:navigationIcon="@drawable/arrow_back_24px"
-        app:title="알림" />
+        app:title="@string/notification_toolbar_title" />
 
     <TextView
         android:id="@+id/textview_notification_empty_msg"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:gravity="center"
-        android:text="알림이 없습니다"
+        android:text="@string/notification_empty_msg"
         android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
         android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/layout_notification_bottom_button"
