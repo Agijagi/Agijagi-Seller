@@ -12,7 +12,7 @@
         android:layout_height="wrap_content">
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/imageview_login_app_logo"
+            android:id="@+id/imageview_login_thumbnail"
             android:layout_width="0dp"
             android:layout_height="280dp"
             android:background="@drawable/thumbnail"
@@ -21,95 +21,60 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textinputlayout_login_emailedit"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_login_google"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="24dp"
-            android:layout_marginTop="60dp"
-            app:boxStrokeColor="@color/jagi_brown"
-            app:endIconMode="clear_text"
-            app:errorEnabled="true"
-            app:hintEnabled="false"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/imageview_login_app_logo">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/textinputedittext_login_email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="이메일을 입력하세요"
-                android:inputType="textEmailAddress" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textinputlayout_login_password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="24dp"
-            android:layout_marginTop="8dp"
-            app:boxStrokeColor="@color/jagi_brown"
-            app:counterEnabled="true"
-            app:counterMaxLength="15"
-            app:endIconMode="password_toggle"
-            app:errorEnabled="true"
-            app:hintEnabled="false"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textinputlayout_login_emailedit">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/textinputedittext_login_password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="비밀번호를 입력하세요"
-                android:inputType="textPassword" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/button_login_googleloginbutton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="24dp"
-            android:adjustViewBounds="true"
-            android:background="@color/jagi_ivory"
-            android:scaleType="fitCenter"
-            android:src="@drawable/google_login"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textinputlayout_login_password" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button_login_jagilogin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="24dp"
-            android:layout_marginTop="8dp"
-            android:adjustViewBounds="true"
-            android:background="@drawable/wide_box_rounded_button_stroke"
-            android:scaleType="fitCenter"
-            android:text="로그인"
-            android:textColor="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/button_login_googleloginbutton" />
-
-        <TextView
-            android:id="@+id/textview_login_join"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:clickable="true"
-            android:focusable="true"
+            android:layout_marginTop="128dp"
+            android:backgroundTint="@color/google_login"
             android:paddingHorizontal="24dp"
-            android:paddingVertical="8dp"
-            android:text="회원가입"
+            android:text="구글로그인으로 시작"
+            android:textAppearance="@style/title_bold_16"
             android:textColor="@color/black"
+            app:cornerRadius="12dp"
+            android:paddingVertical="16dp"
+            android:drawableLeft="@drawable/google"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/button_login_jagilogin" />
+            app:layout_constraintTop_toBottomOf="@id/imageview_login_thumbnail" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_login_naver"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:backgroundTint="@color/naver_login"
+            android:paddingHorizontal="24dp"
+            android:layout_marginTop="4dp"
+            android:text="네이버로그인으로 시작"
+            android:textAppearance="@style/title_bold_16"
+            android:textColor="@color/white"
+            android:paddingVertical="16dp"
+            app:cornerRadius="12dp"
+            app:icon="@drawable/naver"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/button_login_google" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_login_kakao"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:backgroundTint="@color/kakao_login"
+            android:paddingHorizontal="24dp"
+            android:layout_marginTop="4dp"
+            android:text="카카오로그인으로 시작"
+            android:textAppearance="@style/title_bold_16"
+            android:textColor="@color/black"
+            android:paddingVertical="16dp"
+            app:cornerRadius="12dp"
+            app:icon="@drawable/kakao"
+            app:iconTint="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/button_login_naver" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
