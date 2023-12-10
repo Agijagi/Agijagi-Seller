@@ -14,22 +14,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:navigationIcon="@drawable/arrow_back_24px"
-        app:title="알림 설정" />
+        app:title="@string/notification_setting_title" />
 
     <TextView
-        android:id="@+id/textview_notification_item"
+        android:id="@+id/textview_notification_item_inquiry"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="상품문의"
+        android:text="@string/notification_setting_item_inquiry"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar_seller_notification_setting" />
 
     <TextView
-        android:id="@+id/textview_notification_item_detail"
+        android:id="@+id/textview_notification_item_inquiry_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -37,7 +37,7 @@
         android:text="판매 중인 상품의 문의 내역"
         android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_notification_item" />
+        app:layout_constraintTop_toBottomOf="@id/textview_notification_item_inquiry" />
 
 
     <com.google.android.material.materialswitch.MaterialSwitch
@@ -63,7 +63,7 @@
         app:dividerColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_notification_item_detail" />
+        app:layout_constraintTop_toBottomOf="@id/textview_notification_item_inquiry_detail" />
 
 
     <TextView
@@ -72,7 +72,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="주문"
+        android:text="@string/notification_setting_order"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -84,7 +84,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="4dp"
-        android:text="상품 주문 내역"
+        android:text="@string/notification_setting_order_detail"
         android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textview_order"
@@ -121,7 +121,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="교환/취소"
+        android:text="@string/notification_setting_trade_and_cancel"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -133,7 +133,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="4dp"
-        android:text="교환, 취소 신청 내역"
+        android:text="@string/notification_setting_trade_and_cancel_detail"
         android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textview_trade_and_cancel" />
