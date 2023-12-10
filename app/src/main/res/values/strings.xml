@@ -83,4 +83,11 @@
 
     <!-- Chatting Room Chat(My & Other) Item -->
     <string name="chattingroomchat_time">오전 00:00</string>
+
+    <!-- Product Detail Fragment -->
+    <string name="productdetail_brand">브랜드명</string>
+    <string name="productdetail_name">제품명</string>
+    <string name="productdetail_price">000,000원</string>
+    <string name="productdetail_description">기본적인 블랙 색상의 깔끔한 디자인과 다양한 디자인으로 쓰임이 많은 도자기 그릇입니다. 도자기 재질로 무게감이 있어 안정적으로..</string>
+
 </resources>
