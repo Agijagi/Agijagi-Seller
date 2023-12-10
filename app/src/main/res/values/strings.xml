@@ -72,4 +72,15 @@
     <string name="chatting_item_content">내용</string>
     <string name="chatting_item_date">M월 d일</string>
 
+    <!-- Chatting Room Fragment -->
+    <string name="chattingroom_send">채팅 전송 버튼</string>
+
+    <!-- Chatting Room My Chat Item -->
+    <string name="chattingroommychat_is_read">1</string>
+
+    <!-- Chatting Room Other Chat Item -->
+    <string name="chattingroomotherchat_writer">보낸 이</string>
+
+    <!-- Chatting Room Chat(My & Other) Item -->
+    <string name="chattingroomchat_time">오전 00:00</string>
 </resources>

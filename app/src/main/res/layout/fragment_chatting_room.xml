@@ -58,7 +58,7 @@
         android:layout_height="32dp"
         android:layout_margin="8dp"
         android:background="@drawable/arrow_circle_right_24px"
-        android:contentDescription="채팅 전송 버튼"
+        android:contentDescription="@string/chattingroom_send"
         app:layout_constraintBottom_toBottomOf="@id/edittext_chattingroom"
         app:layout_constraintEnd_toEndOf="@id/edittext_chattingroom"
         app:layout_constraintTop_toTopOf="@id/edittext_chattingroom" />
