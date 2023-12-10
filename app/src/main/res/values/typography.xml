@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <style name="body_regular_10">
+        <item name="android:textSize">10sp</item>
+        <item name="fontFamily">@font/nanum_square_round_otf_r</item>
+    </style>
+
     <style name="body_regular_11">
         <item name="android:textSize">11sp</item>
+        <item name="fontFamily">@font/nanum_square_round_otf_r</item>
+    </style>
+
+    <style name="body_regular_12">
+        <item name="android:textSize">12sp</item>
         <item name="fontFamily">@font/nanum_square_round_otf_r</item>
     </style>
 
