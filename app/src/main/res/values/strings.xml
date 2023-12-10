@@ -72,4 +72,42 @@
     <string name="chatting_item_content">내용</string>
     <string name="chatting_item_date">M월 d일</string>
 
+    <!-- Chatting Room Fragment -->
+    <string name="chattingroom_send">채팅 전송 버튼</string>
+
+    <!-- Chatting Room My Chat Item -->
+    <string name="chattingroommychat_is_read">1</string>
+
+    <!-- Chatting Room Other Chat Item -->
+    <string name="chattingroomotherchat_writer">보낸 이</string>
+
+    <!-- Chatting Room Chat(My & Other) Item -->
+    <string name="chattingroomchat_time">오전 00:00</string>
+
+    <!-- Product Detail Fragment -->
+    <string name="productdetail_brand">브랜드명</string>
+    <string name="productdetail_name">제품명</string>
+    <string name="productdetail_price">000,000원</string>
+    <string name="productdetail_description">기본적인 블랙 색상의 깔끔한 디자인과 다양한 디자인으로 쓰임이 많은 도자기 그릇입니다. 도자기 재질로 무게감이 있어 안정적으로..</string>
+
+    <!-- Product Registration Fragment -->
+    <string name="productregistration_toolbar_title">상품등록</string>
+    <string name="productregistration_max_number_of_photos">총 6장의 사진</string>
+    <string name="productregistration_representative_photo_select_notice">체크버튼을 눌러서 대표사진을 선택할 수 있습니다.</string>
+    <string name="productregistration_add_photo">사진추가</string>
+    <string name="productregistration_info_title">상품정보</string>
+    <string name="productregistration_input_product_name">상품명을 입력해주세요</string>
+    <string name="productregistration_input_price">가격을 입력해주세요</string>
+    <string name="productregistration_select_category">카테고리 선택</string>
+    <string name="productregistration_select_order_made">주문제작 가능 여부 선택</string>
+    <string name="productregistration_select_custom_options">주문제작 옵션 선택</string>
+    <string name="productregistration_option_lettering">레터링</string>
+    <string name="productregistration_option_lettering_price">추가 금액</string>
+    <string name="productregistration_option_painting">그림</string>
+    <string name="productregistration_option_painting_price">추가 금액</string>
+    <string name="productregistration_detail">상품 상세정보를 입력해주세요</string>
+    <string name="productregistration_add_plan">도면추가</string>
+    <string name="productregistration_count_plan">( 0 / 4 )</string>
+    <string name="productregistration_check">확인</string>
+
 </resources>
