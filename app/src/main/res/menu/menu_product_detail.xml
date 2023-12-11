@@ -5,13 +5,13 @@
     <item
         android:id="@+id/menu_product_detail_edit"
         android:icon="@drawable/edit_24px"
-        android:title="수정"
+        android:title="@string/all_update"
         app:showAsAction="always" />
 
     <item
         android:id="@+id/menu_product_detail_delete"
         android:icon="@drawable/delete_24px"
-        android:title="삭제"
+        android:title="@string/all_delete"
         app:showAsAction="always" />
 
 </menu>

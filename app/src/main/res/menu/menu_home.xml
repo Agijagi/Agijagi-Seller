@@ -5,14 +5,14 @@
     <item
         android:id="@+id/menu_seller_my_page_chat"
         android:icon="@drawable/chat_24px"
-        android:title="chat"
+        android:title="@string/all_chat"
         android:visible="true"
         app:showAsAction="always" />
 
     <item
         android:id="@+id/menu_seller_my_page_notification"
         android:icon="@drawable/notifications_24px"
-        android:title="Item"
+        android:title="@string/all_notification"
         app:showAsAction="always" />
 
 </menu>
