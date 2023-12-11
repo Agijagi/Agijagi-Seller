@@ -211,7 +211,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="end|center_vertical"
-                    android:hint="@string/productregistration_option_lettering_price"
+                    android:hint="@string/all_price"
                     android:inputType="number|numberDecimal"
                     android:padding="0dp" />
 
@@ -241,7 +241,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="end|center_vertical"
-                    android:hint="@string/productregistration_option_painting_price"
+                    android:hint="@string/all_price"
                     android:inputType="number|numberDecimal"
                     android:padding="0dp" />
 
@@ -321,7 +321,7 @@
                 android:layout_marginTop="24dp"
                 android:background="@drawable/wide_box_selected_active"
                 android:padding="8dp"
-                android:text="@string/productregistration_check"
+                android:text="@string/all_check"
                 android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
                 android:textColor="@color/jagi_ivory"
                 app:layout_constraintEnd_toEndOf="parent"

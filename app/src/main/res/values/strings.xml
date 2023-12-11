@@ -1,10 +1,26 @@
 <resources>
     <string name="app_name">AgijagiSeller</string>
 
+    <!-- All -->
+    <string name="all_brand">브랜드명</string>
+    <string name="all_name">제품명 도자기</string>
+    <string name="all_price">100,000원</string>
+    <string name="all_representative_name">대표자명</string>
+    <string name="all_email">E-mail</string>
+    <string name="all_add_file_text">사업자 등록증 추가</string>
+    <string name="all_add_file_button">파일 추가</string>
+    <string name="all_option_lettering_price">추가 금액</string>
+    <string name="all_check">확인</string>
+    <string name="all_date">23.09.09</string>
+    <string name="all_negative">취소</string>
+    <string name="all_delete">삭제</string>
+    <string name="all_chat">채팅</string>
+    <string name="all_notification">알림</string>
+    <string name="all_update">수정</string>
+    <string name="all_product_add">상품등록</string>
+
     <!-- Home fragment -->
     <string name="home_toolbar_title">판매자</string>
-    <string name="home_store_name">상호명</string>
-    <string name="home_store_email">aaaa@gmail.com</string>
     <string name="home_management_my_store">내 스토어 관리</string>
     <string name="home_product_add">상품 등록</string>
     <string name="home_product_list">판매상품 리스트</string>
@@ -28,40 +44,25 @@
     <string name="product_list_empty_msg">등록된 판매상품이 없습니다</string>
 
     <!-- ProductList Item -->
-    <string name="product_list_item_brand">브랜드명</string>
-    <string name="product_list_item_name">제품명 도자기</string>
-    <string name="product_list_item_price">100,000원</string>
-    <string name="product_list_item_date">23.09.09</string>
     <string name="product_list_item_status_hint">상태</string>
 
     <!-- Signup Fragment -->
     <string name="signup_toolbar_title">회원가입</string>
-    <string name="signup_business_name_hint">상호명</string>
     <string name="signup_registration_number_hint">사업자등록번호 ( 000 – 00 – 00000 )</string>
-    <string name="signup_representative_name_hint">대표자명</string>
-    <string name="signup_email_hint">E-mail</string>
     <string name="signup_password_hint">비밀번호 (공백 제외, 6 ~ 15 자)</string>
     <string name="signup_check_password_hint">비밀번호 확인</string>
     <string name="signup_business_address_hint">사업장 주소</string>
     <string name="signup_business_number_hint">사업장 전화번호 ( 010 – 0000 – 0000 )</string>
-    <string name="signup_add_file_text">사업자 등록증 추가</string>
-    <string name="signup_add_file_button">파일 추가</string>
     <string name="signup_complete_button">가입하기</string>
 
     <!-- StoreManagement Fragment -->
     <string name="store_management_toolbar_title">내 스토어 관리</string>
-    <string name="store_management_email">email</string>
-    <string name="store_management_business_name_hint">상호명</string>
     <string name="store_management_business_license_number_hint">사업자 등록번호</string>
-    <string name="store_management_representative_name_hint">대표자명</string>
     <string name="store_management_call_hint">연락처</string>
     <string name="store_management_password_hint">비밀번호</string>
     <string name="store_management_check_password_hint">비밀번호 확인</string>
     <string name="store_management_address_hint">주소</string>
-    <string name="store_management_file_text">사업자 등록증 추가</string>
     <string name="store_management_file_name">사업자 등록증 이미지</string>
-    <string name="store_management_file_add">파일 추가</string>
-    <string name="store_management_edit_button">수정</string>
 
     <!-- Chatting Fragment -->
     <string name="chatting_toolbar_title">채팅</string>
@@ -85,9 +86,6 @@
     <string name="chattingroomchat_time">오전 00:00</string>
 
     <!-- Product Detail Fragment -->
-    <string name="productdetail_brand">브랜드명</string>
-    <string name="productdetail_name">제품명</string>
-    <string name="productdetail_price">000,000원</string>
     <string name="productdetail_description">기본적인 블랙 색상의 깔끔한 디자인과 다양한 디자인으로 쓰임이 많은 도자기 그릇입니다. 도자기 재질로 무게감이 있어 안정적으로..</string>
 
     <!-- Product Registration Fragment -->
@@ -102,13 +100,10 @@
     <string name="productregistration_select_order_made">주문제작 가능 여부 선택</string>
     <string name="productregistration_select_custom_options">주문제작 옵션 선택</string>
     <string name="productregistration_option_lettering">레터링</string>
-    <string name="productregistration_option_lettering_price">추가 금액</string>
     <string name="productregistration_option_painting">그림</string>
-    <string name="productregistration_option_painting_price">추가 금액</string>
     <string name="productregistration_detail">상품 상세정보를 입력해주세요</string>
     <string name="productregistration_add_plan">도면추가</string>
     <string name="productregistration_count_plan">( 0 / 4 )</string>
-    <string name="productregistration_check">확인</string>
 
     <!-- Notification Setting Fragment -->
     <string name="notification_setting_title">알림 설정</string>
@@ -121,13 +116,15 @@
     <!-- Order Shipping Management Fragment -->
     <string name="order_shipping_management_title">주문/배송 관리</string>
     <string name="order_shipping_management_item_name">주문자명</string>
-    <string name="order_shipping_management_item_brand">제품명 도자기</string>
-    <string name="order_shipping_management_item_price">100,000원</string>
-    <string name="order_shipping_management_date">23.07.08</string>
 
     <!-- Dialog -->
     <string name="dialog_message">로그아웃 할까요?</string>
-    <string name="dialog_positive">확인</string>
-    <string name="dialog_negative">취소</string>
+
+
+    <!-- Login -->
+    <string name="login_google">구글로그인으로 시작</string>
+    <string name="login_naver">네이버로그인으로 시작</string>
+    <string name="login_kakao">카카오로그인으로 시작</string>
+
 
 </resources>
