@@ -20,4 +20,8 @@
     <color name="jagi_white">#4DFFFFFF</color>
     
     <color name="jagi_gray_message">#FF676767</color>
+
+    <color name="google_login">#F2F2F2</color>
+    <color name="naver_login">#03C75A</color>
+    <color name="kakao_login">#FEE500</color>
 </resources>
