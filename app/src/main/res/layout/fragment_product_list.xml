@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:menu="@menu/menu_product_list"
         app:navigationIcon="@drawable/arrow_back_24px"
-        app:title="판매상품 리스트" />
+        app:title="@string/product_list_toolbar_title" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview_product_list"
@@ -65,7 +65,7 @@
         android:id="@+id/textView_product_list_empty"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="등록된 판매상품이 없습니다"
+        android:text="@string/product_list_empty_msg"
         android:textSize="16sp"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
