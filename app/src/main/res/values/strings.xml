@@ -112,9 +112,6 @@
 
 
 <!--    notificationSettingFragment -->
-    <string name="notification_setting_buyer_name">구매자명</string>
-    <string name="notification_setting_notification_detail">알림내용</string>
-    <string name="notification_setting_month_day">M월 d일</string>
     <string name="notification_setting_title">알림 설정</string>
     <string name="notification_setting_item_inquiry">상품문의</string>
     <string name="notification_setting_order">주문</string>
