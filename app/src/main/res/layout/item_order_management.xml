@@ -41,8 +41,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
             android:layout_marginTop="28dp"
-            android:text="주문자명"
-            android:textSize="10sp"
+            android:text="@string/order_shipping_management_item_name"
+            android:textAppearance="@style/body_regular_10"
             app:layout_constraintStart_toEndOf="@+id/cardView_order_management_shimmer"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -52,8 +52,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
             android:layout_marginTop="4dp"
-            android:text="제품명 도자기"
-            android:textSize="12sp"
+            android:text="@string/order_shipping_management_item_brand"
+            android:textAppearance="@style/body_regular_12"
             app:layout_constraintStart_toEndOf="@+id/cardView_order_management_shimmer"
             app:layout_constraintTop_toBottomOf="@id/textview_order_management_item_buyer_name" />
 
@@ -63,8 +63,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
             android:layout_marginTop="4dp"
-            android:text="100,000원"
-            android:textSize="11sp"
+            android:text="@string/order_shipping_management_item_price"
+            android:textAppearance="@style/body_regular_11"
             app:layout_constraintStart_toEndOf="@+id/cardView_order_management_shimmer"
             app:layout_constraintTop_toBottomOf="@id/textview_order_management_item_name" />
 
@@ -74,8 +74,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:text="23.07.08"
-            android:textSize="11sp"
+            android:text="@string/order_shipping_management_date"
+            android:textAppearance="@style/body_regular_11"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

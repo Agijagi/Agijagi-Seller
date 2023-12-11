@@ -15,7 +15,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:navigationIcon="@drawable/arrow_back_24px"
-        app:title="주문/배송 관리" />
+        app:title="@string/order_shipping_management_title" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview_order_management"
