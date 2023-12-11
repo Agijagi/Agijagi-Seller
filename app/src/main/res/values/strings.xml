@@ -110,8 +110,7 @@
     <string name="productregistration_count_plan">( 0 / 4 )</string>
     <string name="productregistration_check">확인</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- Dialog -->
     <string name="dialog_message">로그아웃 할까요?</string>
     <string name="dialog_positive">확인</string>
     <string name="dialog_negative">취소</string>
