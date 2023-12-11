@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">AgijagiSeller</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+<!--    notificationSettingFragment -->
     <string name="notification_setting_buyer_name">구매자명</string>
     <string name="notification_setting_notification_detail">알림내용</string>
     <string name="notification_setting_month_day">M월 d일</string>
@@ -11,6 +11,8 @@
     <string name="notification_setting_order_detail">상품 주문 내역</string>
     <string name="notification_setting_trade_and_cancel">교환/취소</string>
     <string name="notification_setting_trade_and_cancel_detail">교환, 취소 신청 내역</string>
+
+<!--    orderShippingManagementFragment-->
     <string name="order_shipping_management_title">주문/배송 관리</string>
     <string name="order_shipping_management_item_name">주문자명</string>
     <string name="order_shipping_management_item_brand">제품명 도자기</string>
