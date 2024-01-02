@@ -19,7 +19,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:navigationIcon="@drawable/arrow_back_24px"
-            app:title="주문/배송 관리" />
+            app:title="@string/order_shipping_detail_title" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button_order_shipping_reject"
@@ -29,7 +29,7 @@
             android:background="@drawable/wide_box_rounded_button_stroke"
             android:paddingHorizontal="6dp"
             android:paddingVertical="2dp"
-            android:text="주문 거부"
+            android:text="@string/order_shipping_detail_cancel"
             android:textAppearance="@style/TextAppearance.Material3.BodySmall"
             android:textColor="@color/jagi_ivory"
             app:layout_constraintEnd_toEndOf="parent"
@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="4dp"
-            android:text="주문 정보"
+            android:text="@string/order_shipping_detail_order_detail_info"
             android:textColor="@color/black"
             android:textSize="15sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -53,7 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="4dp"
-            android:text="주문상태 : 발송처리"
+            android:text="@string/order_shipping_detail_info_state"
             android:textColor="@color/jagi_black_70"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -80,7 +80,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="24dp"
-                    android:text="주문번호"
+                    android:text="@string/order_shipping_detail_order_number_text"
                     android:textColor="@color/black"
                     android:textSize="14sp" />
 
@@ -90,7 +90,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="4dp"
-                    android:text="00000000000000"
+                    android:text="@string/order_shipping_detail_order_number"
                     android:textColor="@color/jagi_black_70"
                     android:textSize="14sp" />
 
@@ -99,7 +99,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="24dp"
-                    android:text="상품명"
+                    android:text="@string/order_shipping_detail_product_name"
                     android:textColor="@color/black"
                     android:textSize="14sp" />
 
@@ -109,7 +109,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="4dp"
-                    android:text="도자기"
+                    android:text="@string/order_shipping_detail_product_name"
                     android:textColor="@color/jagi_black_70"
                     android:textSize="14sp" />
 
@@ -118,7 +118,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="24dp"
-                    android:text="옵션"
+                    android:text="@string/order_shipping_detail_option_text"
                     android:textColor="@color/black"
                     android:textSize="14sp" />
 
@@ -128,7 +128,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="4dp"
-                    android:text="옵션1 : Blue"
+                    android:text="@string/order_shipping_detail_option"
                     android:textColor="@color/jagi_black_70"
                     android:textSize="14sp" />
 
@@ -137,7 +137,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="24dp"
-                    android:text="결제금액"
+                    android:text="@string/order_shipping_detail_price_text"
                     android:textColor="@color/black"
                     android:textSize="14sp" />
 
@@ -148,7 +148,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="4dp"
                     android:layout_marginBottom="24dp"
-                    android:text="159,000원"
+                    android:text="@string/order_shipping_detail_price"
                     android:textColor="@color/jagi_black_70"
                     android:textSize="14sp" />
 
@@ -191,7 +191,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="24dp"
-                    android:text="주문자명"
+                    android:text="@string/order_shipping_detail_buyer_name"
                     android:textColor="@color/black"
                     android:textSize="15sp" />
 
@@ -201,7 +201,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="12dp"
-                    android:text="010-0001-1101"
+                    android:text="@string/order_shipping_detail_buyer_phone_number"
                     android:textColor="@color/jagi_black_70"
                     android:textSize="14sp" />
 
@@ -212,7 +212,7 @@
                     android:layout_marginHorizontal="16dp"
                     android:layout_marginTop="12dp"
                     android:layout_marginBottom="24dp"
-                    android:text="배송지 주소가 들어갑니다. 시군구 도로명 상세주소 (우편번호)"
+                    android:text="@string/order_shipping_detail_buyer_address"
                     android:textColor="@color/jagi_black_70"
                     android:textSize="14sp" />
 

@@ -117,9 +117,25 @@
     <string name="order_shipping_management_title">주문/배송 관리</string>
     <string name="order_shipping_management_item_name">주문자명</string>
 
+    <!-- Order Shipping Detail Fragment -->
+    <string name="order_shipping_detail_title">주문/배송 관리</string>
+    <string name="order_shipping_detail_cancel">주문 거부</string>
+    <string name="order_shipping_detail_order_detail_info">주문 정보</string>
+    <string name="order_shipping_detail_info_state">주문상태 : 발송처리</string>
+    <string name="order_shipping_detail_order_number_text">주문번호</string>
+    <string name="order_shipping_detail_order_number">00000000000000</string>
+    <string name="order_shipping_detail_product_name_text">상품명</string>
+    <string name="order_shipping_detail_product_name">도자기</string>
+    <string name="order_shipping_detail_option_text">옵션</string>
+    <string name="order_shipping_detail_option">옵션1 : Blue</string>
+    <string name="order_shipping_detail_price_text">결제금액</string>
+    <string name="order_shipping_detail_price">159,000원</string>
+    <string name="order_shipping_detail_buyer_name">주문자명</string>
+    <string name="order_shipping_detail_buyer_phone_number">010-0001-1101</string>
+    <string name="order_shipping_detail_buyer_address">배송지 주소가 들어갑니다. 시군구 도로명 상세주소 (우편번호)</string>
+
     <!-- Dialog -->
     <string name="dialog_message">로그아웃 할까요?</string>
-
 
     <!-- Login -->
     <string name="login_google">구글로그인으로 시작</string>
