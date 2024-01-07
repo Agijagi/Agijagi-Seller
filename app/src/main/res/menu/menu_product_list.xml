@@ -5,7 +5,7 @@
     <item
         android:id="@+id/menu_product_list_add"
         android:icon="@drawable/box_add_24px"
-        android:title="@string/all_pruduct_add"
+        android:title="@string/all_product_add"
         app:showAsAction="always" />
 
 </menu>
