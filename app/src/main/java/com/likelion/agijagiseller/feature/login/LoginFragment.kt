@@ -1,13 +1,16 @@
 package com.likelion.agijagiseller.feature.login
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.likelion.agijagiseller.R
 import com.likelion.agijagiseller.databinding.FragmentLoginBinding
+import com.navercorp.nid.NaverIdLoginSDK
+import com.navercorp.nid.oauth.OAuthLoginCallback
 
 class LoginFragment : Fragment() {
     private var _binding: FragmentLoginBinding? = null
@@ -24,22 +27,40 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        initLoginButton()
-        initSignUpButton()
+        initNaverLoginButton()
     }
 
-    private fun initSignUpButton() {
-        binding.run {
-            textviewLoginJoin.setOnClickListener {
-                findNavController().navigate(R.id.action_loginFragment_to_signupFragment)
-            }
-        }
-    }
+    private fun initNaverLoginButton() {
 
-    private fun initLoginButton() {
+        NaverIdLoginSDK.initialize(
+            requireContext(),
+            getString(R.string.naver_client_id),
+            getString(R.string.naver_client_secret),
+            getString(R.string.naver_client_name)
+        )
+
         binding.run {
-            buttonLoginJagilogin.setOnClickListener {
-                findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+            buttonLoginNaver.setOnClickListener {
+                val oAuthLoginCallback = object : OAuthLoginCallback {
+                    override fun onSuccess() {
+                        findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+                    }
+
+                    override fun onFailure(httpStatus: Int, message: String) {
+                        val errorCode = NaverIdLoginSDK.getLastErrorCode().code
+                        val errorDescription = NaverIdLoginSDK.getLastErrorDescription()
+                        Toast.makeText(
+                            context,
+                            "errorCode: $errorCode, errorDescription: $errorDescription",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+
+                    override fun onError(errorCode: Int, message: String) {
+                        onFailure(errorCode, message)
+                    }
+                }
+                NaverIdLoginSDK.authenticate(requireContext(), oAuthLoginCallback)
             }
         }
     }
