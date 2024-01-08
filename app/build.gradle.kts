@@ -58,4 +58,7 @@ dependencies {
     // NAVER Login
     implementation("com.navercorp.nid:oauth-jdk8:5.1.1") // jdk 8
 
+    // Kakao Login
+    implementation("com.kakao.sdk:v2-user:2.19.0")
+
 }
