@@ -54,4 +54,8 @@ dependencies {
     // Shimmer
     implementation("com.facebook.shimmer:shimmer:0.5.0")
     implementation("io.supercharge:shimmerlayout:2.1.0")
+
+    // NAVER Login
+    implementation("com.navercorp.nid:oauth-jdk8:5.1.1") // jdk 8
+
 }
