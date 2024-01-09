@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.likelion.agijagiseller.BuildConfig
 import com.likelion.agijagiseller.R
 import com.likelion.agijagiseller.databinding.FragmentLoginBinding
 import com.navercorp.nid.NaverIdLoginSDK
@@ -34,9 +35,9 @@ class LoginFragment : Fragment() {
 
         NaverIdLoginSDK.initialize(
             requireContext(),
-            getString(R.string.naver_client_id),
-            getString(R.string.naver_client_secret),
-            getString(R.string.naver_client_name)
+            BuildConfig.NAVER_ID,
+            BuildConfig.NAVER_SECRET,
+            BuildConfig.NAVER_NAME
         )
 
         binding.run {
