@@ -1,12 +1,17 @@
 package com.likelion.agijagiseller.feature.login
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.kakao.sdk.auth.model.OAuthToken
+import com.kakao.sdk.common.model.ClientError
+import com.kakao.sdk.common.model.ClientErrorCause
+import com.kakao.sdk.user.UserApiClient
 import com.likelion.agijagiseller.R
 import com.likelion.agijagiseller.databinding.FragmentLoginBinding
 import com.navercorp.nid.NaverIdLoginSDK
@@ -26,8 +31,8 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         initNaverLoginButton()
+        initKakaoLoginButton()
     }
 
     private fun initNaverLoginButton() {
@@ -61,6 +66,47 @@ class LoginFragment : Fragment() {
                     }
                 }
                 NaverIdLoginSDK.authenticate(requireContext(), oAuthLoginCallback)
+            }
+        }
+    }
+
+    private fun initKakaoLoginButton() {
+        binding.buttonLoginKakao.setOnClickListener {
+            val callback: (OAuthToken?, Throwable?) -> Unit = { token, error ->
+                if (error != null) {
+                    Log.e("카카오 로그인", "카카오계정으로 로그인 실패", error)
+                } else if (token != null) {
+                    findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+                    Log.d("카카오 로그인", "카카오계정으로 로그인 성공 ${token.accessToken}")
+                }
+            }
+
+            if (UserApiClient.instance.isKakaoTalkLoginAvailable(requireContext())) {
+                UserApiClient.instance.loginWithKakaoTalk(requireContext()) { token, error ->
+                    if (error != null) {
+                        Log.e("카카오톡 로그인", "카카오톡으로 로그인 실패", error)
+
+                        if (error is ClientError && error.reason == ClientErrorCause.Cancelled) {
+                            return@loginWithKakaoTalk
+                        }
+
+                        UserApiClient.instance.loginWithKakaoAccount(requireContext(), callback = callback)
+                    } else if (token != null) {
+                        Log.d("카카오톡 로그인", "카카오톡으로 로그인 성공 ${token.accessToken}")
+                        findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+                        UserApiClient.instance.me { user, error ->
+                            if (error != null) {
+                                Log.e("사용자 정보 요청 실패", "사용자 정보 요청 실패", error)
+                            } else if (user != null) {
+                                Log.d("사용자 정보 요청 성공", user.kakaoAccount?.email!!)
+                                Log.d("사용자 정보 요청 성공", user.kakaoAccount?.profile?.nickname.toString())
+                                Log.d("사용자 정보 요청 성공", user.id.toString())
+                            }
+                        }
+                    }
+                }
+            } else {
+                UserApiClient.instance.loginWithKakaoAccount(requireContext(), callback = callback)
             }
         }
     }
