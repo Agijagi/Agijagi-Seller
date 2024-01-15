@@ -8,6 +8,9 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import com.kakao.sdk.auth.model.OAuthToken
 import com.kakao.sdk.common.model.ClientError
 import com.kakao.sdk.common.model.ClientErrorCause
@@ -21,6 +24,8 @@ class LoginFragment : Fragment() {
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
 
+    private lateinit var auth: FirebaseAuth
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -31,6 +36,7 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        auth = Firebase.auth
         initNaverLoginButton()
         initKakaoLoginButton()
     }
@@ -98,9 +104,10 @@ class LoginFragment : Fragment() {
                             if (error != null) {
                                 Log.e("사용자 정보 요청 실패", "사용자 정보 요청 실패", error)
                             } else if (user != null) {
-                                Log.d("사용자 정보 요청 성공", user.kakaoAccount?.email!!)
+                                val email = user.kakaoAccount?.email!!
+                                val password = user.id.toString()
+                                signUpKakaoAccount(email, password)
                                 Log.d("사용자 정보 요청 성공", user.kakaoAccount?.profile?.nickname.toString())
-                                Log.d("사용자 정보 요청 성공", user.id.toString())
                             }
                         }
                     }
@@ -109,6 +116,17 @@ class LoginFragment : Fragment() {
                 UserApiClient.instance.loginWithKakaoAccount(requireContext(), callback = callback)
             }
         }
+    }
+
+    private fun signUpKakaoAccount(email: String, password: String) {
+        auth.createUserWithEmailAndPassword(email, password)
+            .addOnCompleteListener(requireActivity()) { task ->
+                if (task.isSuccessful) {
+                    Log.d("회원가입 성공", "카카오 회원가입 성공")
+                } else {
+                    Log.w("회원가입 실패", "카카오 회원가입 실패", task.exception)
+                }
+            }
     }
 
     override fun onDestroyView() {
