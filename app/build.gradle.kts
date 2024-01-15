@@ -3,6 +3,7 @@ import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -73,5 +74,11 @@ dependencies {
 
     // Kakao Login
     implementation("com.kakao.sdk:v2-user:2.19.0")
+
+    // Firebase platform
+    implementation(platform("com.google.firebase:firebase-bom:32.7.0"))
+
+    //Firebase Authentication library
+    implementation("com.google.firebase:firebase-auth-ktx")
 
 }
