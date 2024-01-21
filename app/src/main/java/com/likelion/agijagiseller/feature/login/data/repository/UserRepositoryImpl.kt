@@ -22,8 +22,5 @@ class UserRepositoryImpl @Inject constructor(
 
     override suspend fun getUser(
         uid: String,
-    ): User? {
-        val user = userRemoteDataSource.getUser(uid)
-        return user
-    }
+    ): User? = userRemoteDataSource.getUser(uid)
 }
