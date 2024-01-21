@@ -1,0 +1,54 @@
+package com.likelion.agijagiseller.feature.login.data.remote
+
+import android.util.Log
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.firestore.FirebaseFirestore
+import com.likelion.agijagiseller.model.User
+import kotlinx.coroutines.tasks.await
+import java.lang.Exception
+import javax.inject.Inject
+
+class UserRemoteDataSource @Inject constructor(
+    private val db: FirebaseFirestore,
+    private val auth: FirebaseAuth,
+) {
+    suspend fun signUp(
+        email: String,
+        password: String,
+    ): Boolean {
+        return try {
+            auth.createUserWithEmailAndPassword(email, password).await()
+            Log.d("user CREATE 성공", "user CREATE 성공")
+            true
+        } catch (e: Exception) {
+            Log.d("user CREATE 실패", "user CREATE 실패")
+            false
+        }
+
+    }
+
+    suspend fun saveUser(
+        uid: String,
+        user: User,
+    ): Boolean {
+        return try {
+            db.collection("seller").document(uid).set(user).await()
+            Log.d("user 정보 CREATE 성공", "user 정보 CREATE 성공")
+            true
+        } catch (e: Exception) {
+            Log.d("user 정보 CREATE 실패", e.message.toString())
+            false
+        }
+    }
+
+    suspend fun getCurrentUser(): FirebaseUser? {
+        return try {
+            Log.d("uid READ 성공", "uid READ 성공")
+            auth.currentUser
+        } catch (e: Exception) {
+            Log.d("uid READ 실패", e.message.toString())
+            null
+        }
+    }
+}

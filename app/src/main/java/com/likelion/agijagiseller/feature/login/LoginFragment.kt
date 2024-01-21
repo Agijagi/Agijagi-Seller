@@ -7,39 +7,38 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
+import com.google.android.material.snackbar.Snackbar
 import com.kakao.sdk.auth.model.OAuthToken
 import com.kakao.sdk.common.model.ClientError
 import com.kakao.sdk.common.model.ClientErrorCause
 import com.kakao.sdk.user.UserApiClient
 import com.likelion.agijagiseller.R
 import com.likelion.agijagiseller.databinding.FragmentLoginBinding
+import com.likelion.agijagiseller.model.LoginType
+import com.likelion.agijagiseller.model.User
 import com.navercorp.nid.NaverIdLoginSDK
 import com.navercorp.nid.oauth.OAuthLoginCallback
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class LoginFragment : Fragment() {
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
 
-    val db = Firebase.firestore
-    private lateinit var auth: FirebaseAuth
-
+    private val userViewModel: UserViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        auth = Firebase.auth
         initNaverLoginButton()
         initKakaoLoginButton()
     }
@@ -125,30 +124,35 @@ class LoginFragment : Fragment() {
         password: String,
         nickname: String,
     ) {
-        auth.createUserWithEmailAndPassword(email, password)
-            .addOnCompleteListener(requireActivity()) { task ->
-                if (task.isSuccessful) {
-                    saveKakaoUserInfo(email, nickname)
-                    Log.d("회원가입 성공", "카카오 회원가입 성공")
-                } else {
-                    Log.w("회원가입 실패", "카카오 회원가입 실패", task.exception)
-                }
+        userViewModel.signUp(email, password)
+        userViewModel.signUpStatus.observe(viewLifecycleOwner) { response ->
+            if (response == true) {
+                saveKakaoUserInfo(email, nickname)
+                Log.d("회원가입 성공", "카카오 회원가입 성공")
+            } else {
+                Log.d("회원가입 실패", "카카오 회원가입 실패")
             }
+        }
     }
 
     private fun saveKakaoUserInfo(
         email: String,
         nickname: String,
     ) {
-        val currentUser = auth.currentUser
-        currentUser?.let { user ->
-            val kakaoUser = hashMapOf(
-                "email" to email,
-                "loginType" to "KAKAO",
-                "name" to nickname
+        userViewModel.getCurrentUser()
+        userViewModel.currentUser.observe(viewLifecycleOwner) { user ->
+            val kakaoUser = User(
+                email,
+                LoginType.KAKAO.toString(),
+                nickname,
             )
-            db.collection("seller").document(user.uid).set(kakaoUser).addOnSuccessListener {
-                findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+            userViewModel.saveUser(user.uid, kakaoUser)
+            userViewModel.userSaved.observe(viewLifecycleOwner) { response ->
+                if (response == true) {
+                    findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+                } else {
+                    Snackbar.make(requireView(), "카카오 로그인 실패", Snackbar.LENGTH_SHORT).show()
+                }
             }
         }
     }
