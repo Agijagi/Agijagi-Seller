@@ -23,6 +23,9 @@ class UserViewModel @Inject constructor(
     private var _currentUser = MutableLiveData<FirebaseUser>()
     val currentUser = _currentUser
 
+    private var _userGetStatus = MutableLiveData<User?>()
+    val userGetStatus get() = _userGetStatus
+
     fun signUp(
         email: String,
         password: String,
@@ -44,6 +47,14 @@ class UserViewModel @Inject constructor(
     fun getCurrentUser() {
         viewModelScope.launch {
             _currentUser.value = userRepositoryImpl.getCurrentUser()
+        }
+    }
+
+    fun getUser(
+        uid: String,
+    ) {
+        viewModelScope.launch {
+            _userGetStatus.value = userRepositoryImpl.getUser(uid)
         }
     }
 }

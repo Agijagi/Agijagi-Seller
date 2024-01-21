@@ -3,7 +3,9 @@ package com.likelion.agijagiseller.feature.login.data.remote
 import android.util.Log
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.toObject
 import com.likelion.agijagiseller.model.User
 import kotlinx.coroutines.tasks.await
 import java.lang.Exception
@@ -48,6 +50,21 @@ class UserRemoteDataSource @Inject constructor(
             auth.currentUser
         } catch (e: Exception) {
             Log.d("uid READ 실패", e.message.toString())
+            null
+        }
+    }
+
+    suspend fun getUser(
+        uid: String,
+    ): User? {
+        return try {
+            val document = db.collection("seller").document(uid).get().await()
+            document.toObject(User::class.java)?.also { user ->
+                Log.d("user 정보 READ 성공", "$user")
+                return user
+            }
+        } catch (e: Exception) {
+            Log.d("user 정보 READ 실패", e.message.toString())
             null
         }
     }

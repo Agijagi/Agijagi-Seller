@@ -146,14 +146,24 @@ class LoginFragment : Fragment() {
                 LoginType.KAKAO.toString(),
                 nickname,
             )
-            userViewModel.saveUser(user.uid, kakaoUser)
+            val uid = user.uid
+            userViewModel.saveUser(uid, kakaoUser)
             userViewModel.userSaved.observe(viewLifecycleOwner) { response ->
                 if (response == true) {
-                    findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+                    getUserInfo(uid)
                 } else {
                     Snackbar.make(requireView(), "카카오 로그인 실패", Snackbar.LENGTH_SHORT).show()
                 }
             }
+        }
+    }
+
+    private fun getUserInfo(
+        uid: String,
+    ) {
+        userViewModel.getUser(uid)
+        userViewModel.userGetStatus.observe(viewLifecycleOwner) {
+            findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
         }
     }
 

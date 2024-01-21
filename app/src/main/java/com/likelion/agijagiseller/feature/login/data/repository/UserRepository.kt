@@ -15,4 +15,8 @@ interface UserRepository {
     ): Boolean
 
     suspend fun getCurrentUser(): FirebaseUser?
+
+    suspend fun getUser(
+        uid: String,
+    ): User?
 }
