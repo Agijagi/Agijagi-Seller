@@ -1,7 +1,7 @@
 package com.likelion.agijagiseller.feature.login.data.repository
 
 import com.likelion.agijagiseller.feature.login.data.remote.UserRemoteDataSource
-import com.likelion.agijagiseller.model.User
+import com.likelion.agijagiseller.feature.login.model.User
 import javax.inject.Inject
 
 class UserRemoteRepositoryImpl @Inject constructor(

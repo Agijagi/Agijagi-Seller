@@ -6,7 +6,7 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.toObject
-import com.likelion.agijagiseller.model.User
+import com.likelion.agijagiseller.feature.login.model.User
 import kotlinx.coroutines.tasks.await
 import java.lang.Exception
 import javax.inject.Inject

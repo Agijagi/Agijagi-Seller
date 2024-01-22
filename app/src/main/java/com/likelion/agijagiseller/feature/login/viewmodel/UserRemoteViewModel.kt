@@ -1,11 +1,11 @@
-package com.likelion.agijagiseller.feature.login
+package com.likelion.agijagiseller.feature.login.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.firebase.auth.FirebaseUser
 import com.likelion.agijagiseller.feature.login.data.repository.UserRemoteRepositoryImpl
-import com.likelion.agijagiseller.model.User
+import com.likelion.agijagiseller.feature.login.model.User
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject

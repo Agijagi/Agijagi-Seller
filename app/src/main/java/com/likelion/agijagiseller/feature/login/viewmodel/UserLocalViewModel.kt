@@ -1,4 +1,4 @@
-package com.likelion.agijagiseller.feature.login
+package com.likelion.agijagiseller.feature.login.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

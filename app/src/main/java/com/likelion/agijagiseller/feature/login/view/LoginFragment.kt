@@ -1,4 +1,4 @@
-package com.likelion.agijagiseller.feature.login
+package com.likelion.agijagiseller.feature.login.view
 
 import android.os.Bundle
 import android.util.Log
@@ -17,8 +17,10 @@ import com.kakao.sdk.user.UserApiClient
 import com.likelion.agijagiseller.BuildConfig
 import com.likelion.agijagiseller.R
 import com.likelion.agijagiseller.databinding.FragmentLoginBinding
-import com.likelion.agijagiseller.model.LoginType
-import com.likelion.agijagiseller.model.User
+import com.likelion.agijagiseller.feature.login.viewmodel.UserLocalViewModel
+import com.likelion.agijagiseller.feature.login.viewmodel.UserRemoteViewModel
+import com.likelion.agijagiseller.feature.login.model.LoginType
+import com.likelion.agijagiseller.feature.login.model.User
 import com.navercorp.nid.NaverIdLoginSDK
 import com.navercorp.nid.oauth.OAuthLoginCallback
 import dagger.hilt.android.AndroidEntryPoint
