@@ -142,9 +142,4 @@
     <string name="login_naver">네이버로그인으로 시작</string>
     <string name="login_kakao">카카오로그인으로 시작</string>
 
-    <!-- Naver Client -->
-    <string name="naver_client_id">3fQPPxdlQDBkFm9vh5O7</string>
-    <string name="naver_client_secret">J5BA8Aeghd</string>
-    <string name="naver_client_name">Agijagi</string>
-
 </resources>

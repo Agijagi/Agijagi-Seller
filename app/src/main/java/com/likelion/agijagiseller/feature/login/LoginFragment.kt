@@ -14,6 +14,7 @@ import com.kakao.sdk.auth.model.OAuthToken
 import com.kakao.sdk.common.model.ClientError
 import com.kakao.sdk.common.model.ClientErrorCause
 import com.kakao.sdk.user.UserApiClient
+import com.likelion.agijagiseller.BuildConfig
 import com.likelion.agijagiseller.R
 import com.likelion.agijagiseller.databinding.FragmentLoginBinding
 import com.likelion.agijagiseller.model.LoginType
@@ -48,9 +49,9 @@ class LoginFragment : Fragment() {
 
         NaverIdLoginSDK.initialize(
             requireContext(),
-            getString(R.string.naver_client_id),
-            getString(R.string.naver_client_secret),
-            getString(R.string.naver_client_name)
+            BuildConfig.NAVER_ID,
+            BuildConfig.NAVER_SECRET,
+            BuildConfig.NAVER_NAME
         )
 
         binding.run {

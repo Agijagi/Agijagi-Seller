@@ -24,6 +24,10 @@ android {
         manifestPlaceholders["kakaoNativeAppKey"] = getApiKey("kakao_native_app_key")
         buildConfigField("String", "KAKAO_NATIVE_APP_KEY", getApiKey("kakao_native_app_key"))
 
+        buildConfigField("String","NAVER_ID", getApiKey("NAVER_ID"))
+        buildConfigField("String","NAVER_NAME", getApiKey("NAVER_NAME"))
+        buildConfigField("String","NAVER_SECRET", getApiKey("NAVER_SECRET"))
+
         buildFeatures {
             buildConfig = true
         }
@@ -52,6 +56,9 @@ android {
     }
     dataBinding {
         enable = true
+    }
+    buildFeatures {
+        buildConfig = true
     }
 }
 
