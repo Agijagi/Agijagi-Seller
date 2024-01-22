@@ -110,6 +110,7 @@ class LoginFragment : Fragment() {
                                 val email = user.kakaoAccount?.email!!
                                 val password = user.id.toString()
                                 val nickname = user.kakaoAccount?.profile?.nickname.toString()
+                                Snackbar.make(requireView(), "로그인 중 입니다...", Snackbar.LENGTH_SHORT).show()
                                 signUpKakaoAccount(email, password, nickname)
                             }
                         }
