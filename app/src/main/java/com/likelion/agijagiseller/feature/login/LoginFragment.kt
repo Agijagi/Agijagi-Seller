@@ -28,7 +28,7 @@ class LoginFragment : Fragment() {
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
 
-    private val userViewModel: UserViewModel by viewModels()
+    private val userRemoteViewModel: UserRemoteViewModel by viewModels()
     private val userLocalViewModel: UserLocalViewModel by viewModels()
 
     override fun onCreateView(
@@ -126,14 +126,14 @@ class LoginFragment : Fragment() {
         password: String,
         nickname: String,
     ) {
-        userViewModel.signUp(email, password)
-        userViewModel.signUpStatus.observe(viewLifecycleOwner) { response ->
+        userRemoteViewModel.signUp(email, password)
+        userRemoteViewModel.signUpStatus.observe(viewLifecycleOwner) { response ->
             if (response == true) {
                 saveKakaoUserInfo(email, nickname)
                 Log.d("회원가입 성공", "카카오 회원가입 성공")
             } else {
-                userViewModel.getCurrentUser()
-                userViewModel.currentUser.observe(viewLifecycleOwner) { user ->
+                userRemoteViewModel.getCurrentUser()
+                userRemoteViewModel.currentUser.observe(viewLifecycleOwner) { user ->
                     getUserInfo(user.uid)
                     Log.d("이미 존재하는 유저", "로그인 완료")
                 }
@@ -145,16 +145,16 @@ class LoginFragment : Fragment() {
         email: String,
         nickname: String,
     ) {
-        userViewModel.getCurrentUser()
-        userViewModel.currentUser.observe(viewLifecycleOwner) { user ->
+        userRemoteViewModel.getCurrentUser()
+        userRemoteViewModel.currentUser.observe(viewLifecycleOwner) { user ->
             val kakaoUser = User(
                 email,
                 LoginType.KAKAO.toString(),
                 nickname,
             )
             val uid = user.uid
-            userViewModel.saveUser(uid, kakaoUser)
-            userViewModel.userSaved.observe(viewLifecycleOwner) { response ->
+            userRemoteViewModel.saveUser(uid, kakaoUser)
+            userRemoteViewModel.userSaved.observe(viewLifecycleOwner) { response ->
                 if (response == true) {
                     getUserInfo(uid)
                 } else {
@@ -167,8 +167,8 @@ class LoginFragment : Fragment() {
     private fun getUserInfo(
         uid: String,
     ) {
-        userViewModel.getUser(uid)
-        userViewModel.userGetStatus.observe(viewLifecycleOwner) { user ->
+        userRemoteViewModel.getUser(uid)
+        userRemoteViewModel.userGetStatus.observe(viewLifecycleOwner) { user ->
             userLocalViewModel.apply {
                 updateUid(uid)
                 updateEmail(user?.email!!)
