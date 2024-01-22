@@ -17,10 +17,10 @@ import com.kakao.sdk.user.UserApiClient
 import com.likelion.agijagiseller.BuildConfig
 import com.likelion.agijagiseller.R
 import com.likelion.agijagiseller.databinding.FragmentLoginBinding
-import com.likelion.agijagiseller.feature.login.viewmodel.UserLocalViewModel
-import com.likelion.agijagiseller.feature.login.viewmodel.UserRemoteViewModel
 import com.likelion.agijagiseller.feature.login.model.LoginType
 import com.likelion.agijagiseller.feature.login.model.User
+import com.likelion.agijagiseller.feature.login.viewmodel.UserLocalViewModel
+import com.likelion.agijagiseller.feature.login.viewmodel.UserRemoteViewModel
 import com.navercorp.nid.NaverIdLoginSDK
 import com.navercorp.nid.oauth.OAuthLoginCallback
 import dagger.hilt.android.AndroidEntryPoint
@@ -102,7 +102,10 @@ class LoginFragment : Fragment() {
                             return@loginWithKakaoTalk
                         }
 
-                        UserApiClient.instance.loginWithKakaoAccount(requireContext(), callback = callback)
+                        UserApiClient.instance.loginWithKakaoAccount(
+                            requireContext(),
+                            callback = callback
+                        )
                     } else if (token != null) {
                         Log.d("카카오톡 로그인", "카카오톡으로 로그인 성공 ${token.accessToken}")
                         UserApiClient.instance.me { user, error ->
@@ -112,7 +115,8 @@ class LoginFragment : Fragment() {
                                 val email = user.kakaoAccount?.email!!
                                 val password = user.id.toString()
                                 val nickname = user.kakaoAccount?.profile?.nickname.toString()
-                                Snackbar.make(requireView(), "로그인 중 입니다...", Snackbar.LENGTH_SHORT).show()
+                                Snackbar.make(requireView(), "로그인 중 입니다...", Snackbar.LENGTH_SHORT)
+                                    .show()
                                 signUpKakaoAccount(email, password, nickname)
                             }
                         }

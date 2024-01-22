@@ -51,25 +51,21 @@ class UserLocalDataSource @Inject constructor(
         }
     }
 
-    val uid: Flow<String?> =
-        dataStore.data.map { preferences ->
-            preferences[UID]
-        }
+    val uid: Flow<String?> = dataStore.data.map { preferences ->
+        preferences[UID]
+    }
 
-    val email: Flow<String?> =
-        dataStore.data.map { preferences ->
-            preferences[EMAIL]
-        }
+    val email: Flow<String?> = dataStore.data.map { preferences ->
+        preferences[EMAIL]
+    }
 
-    val loginType: Flow<String?> =
-        dataStore.data.map { preferences ->
-            preferences[LOGIN_TYPE]
-        }
+    val loginType: Flow<String?> = dataStore.data.map { preferences ->
+        preferences[LOGIN_TYPE]
+    }
 
-    val name: Flow<String?> =
-        dataStore.data.map { preferences ->
-            preferences[NAME]
-        }
+    val name: Flow<String?> = dataStore.data.map { preferences ->
+        preferences[NAME]
+    }
 
     companion object {
         val UID = stringPreferencesKey("uid")
