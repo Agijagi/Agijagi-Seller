@@ -46,10 +46,10 @@ class UserRemoteDataSource @Inject constructor(
 
     suspend fun getCurrentUser(): FirebaseUser? {
         return try {
-            Log.d("uid READ 성공", "uid READ 성공")
+            Log.d("user READ 성공", "user READ 성공")
             auth.currentUser
         } catch (e: Exception) {
-            Log.d("uid READ 실패", e.message.toString())
+            Log.d("user READ 실패", e.message.toString())
             null
         }
     }
