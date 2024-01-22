@@ -13,7 +13,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object UserModule {
+object UserRemoteModule {
     @Provides
     @Singleton
     fun provideFireStore(): FirebaseFirestore = Firebase.firestore
