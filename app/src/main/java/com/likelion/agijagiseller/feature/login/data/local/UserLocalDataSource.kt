@@ -4,6 +4,8 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
 class UserLocalDataSource @Inject constructor(
@@ -48,6 +50,26 @@ class UserLocalDataSource @Inject constructor(
             }
         }
     }
+
+    val uid: Flow<String?> =
+        dataStore.data.map { preferences ->
+            preferences[UID]
+        }
+
+    val email: Flow<String?> =
+        dataStore.data.map { preferences ->
+            preferences[EMAIL]
+        }
+
+    val loginType: Flow<String?> =
+        dataStore.data.map { preferences ->
+            preferences[LOGIN_TYPE]
+        }
+
+    val name: Flow<String?> =
+        dataStore.data.map { preferences ->
+            preferences[NAME]
+        }
 
     companion object {
         val UID = stringPreferencesKey("uid")
