@@ -28,6 +28,7 @@ class LoginFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val userViewModel: UserViewModel by viewModels()
+    private val userLocalViewModel: UserLocalViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -162,7 +163,13 @@ class LoginFragment : Fragment() {
         uid: String,
     ) {
         userViewModel.getUser(uid)
-        userViewModel.userGetStatus.observe(viewLifecycleOwner) {
+        userViewModel.userGetStatus.observe(viewLifecycleOwner) { user ->
+            userLocalViewModel.apply {
+                updateUid(uid)
+                updateEmail(user?.email!!)
+                updateLoginType(user.loginType!!)
+                updateName(user.name!!)
+            }
             findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
         }
     }
