@@ -4,7 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.firebase.auth.FirebaseUser
-import com.likelion.agijagiseller.feature.login.data.repository.UserRepositoryImpl
+import com.likelion.agijagiseller.feature.login.data.repository.UserRemoteRepositoryImpl
 import com.likelion.agijagiseller.model.User
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -12,7 +12,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class UserViewModel @Inject constructor(
-    private val userRepositoryImpl: UserRepositoryImpl,
+    private val userRemoteRepositoryImpl: UserRemoteRepositoryImpl,
 ) : ViewModel() {
     private var _signUpStatus = MutableLiveData<Boolean>()
     val signUpStatus get() = _signUpStatus
@@ -31,7 +31,7 @@ class UserViewModel @Inject constructor(
         password: String,
     ) {
         viewModelScope.launch {
-            _signUpStatus.value = userRepositoryImpl.signUp(email, password)
+            _signUpStatus.value = userRemoteRepositoryImpl.signUp(email, password)
         }
     }
 
@@ -40,13 +40,13 @@ class UserViewModel @Inject constructor(
         user: User,
     ) {
         viewModelScope.launch {
-            _userSaved.value = userRepositoryImpl.saveUser(uid, user)
+            _userSaved.value = userRemoteRepositoryImpl.saveUser(uid, user)
         }
     }
 
     fun getCurrentUser() {
         viewModelScope.launch {
-            _currentUser.value = userRepositoryImpl.getCurrentUser()
+            _currentUser.value = userRemoteRepositoryImpl.getCurrentUser()
         }
     }
 
@@ -54,7 +54,7 @@ class UserViewModel @Inject constructor(
         uid: String,
     ) {
         viewModelScope.launch {
-            _userGetStatus.value = userRepositoryImpl.getUser(uid)
+            _userGetStatus.value = userRemoteRepositoryImpl.getUser(uid)
         }
     }
 }

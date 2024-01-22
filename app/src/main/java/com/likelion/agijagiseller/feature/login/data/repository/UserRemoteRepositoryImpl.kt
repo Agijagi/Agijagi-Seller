@@ -1,13 +1,12 @@
 package com.likelion.agijagiseller.feature.login.data.repository
 
-import android.util.Log
 import com.likelion.agijagiseller.feature.login.data.remote.UserRemoteDataSource
 import com.likelion.agijagiseller.model.User
 import javax.inject.Inject
 
-class UserRepositoryImpl @Inject constructor(
+class UserRemoteRepositoryImpl @Inject constructor(
     private val userRemoteDataSource: UserRemoteDataSource,
-) : UserRepository {
+) : UserRemoteRepository {
     override suspend fun signUp(
         email: String,
         password: String,

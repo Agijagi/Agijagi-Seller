@@ -3,7 +3,7 @@ package com.likelion.agijagiseller.feature.login.data.repository
 import com.google.firebase.auth.FirebaseUser
 import com.likelion.agijagiseller.model.User
 
-interface UserRepository {
+interface UserRemoteRepository {
     suspend fun signUp(
         email: String,
         password: String,

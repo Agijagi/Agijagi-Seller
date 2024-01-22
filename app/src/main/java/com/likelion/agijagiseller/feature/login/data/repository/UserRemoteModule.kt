@@ -24,7 +24,7 @@ object UserRemoteModule {
 
     @Provides
     @Singleton
-    fun provideUserRepository(userRepositoryImpl: UserRepositoryImpl): UserRepository {
+    fun provideUserRepository(userRepositoryImpl: UserRemoteRepositoryImpl): UserRemoteRepository {
         return userRepositoryImpl
     }
 }
