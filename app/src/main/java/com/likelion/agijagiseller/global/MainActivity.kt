@@ -6,7 +6,9 @@ import androidx.activity.OnBackPressedCallback
 import androidx.navigation.fragment.NavHostFragment
 import com.likelion.agijagiseller.R
 import com.likelion.agijagiseller.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var activityMainBinding: ActivityMainBinding
 
