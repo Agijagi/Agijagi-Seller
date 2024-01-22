@@ -132,7 +132,11 @@ class LoginFragment : Fragment() {
                 saveKakaoUserInfo(email, nickname)
                 Log.d("회원가입 성공", "카카오 회원가입 성공")
             } else {
-                Log.d("회원가입 실패", "카카오 회원가입 실패")
+                userViewModel.getCurrentUser()
+                userViewModel.currentUser.observe(viewLifecycleOwner) { user ->
+                    getUserInfo(user.uid)
+                    Log.d("이미 존재하는 유저", "로그인 완료")
+                }
             }
         }
     }
